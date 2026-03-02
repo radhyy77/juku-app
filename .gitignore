@@ -1,7 +1,25 @@
-.DS_Store
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+
+# Env / secrets
+.env
+.env.*
+*.sqlite3
+*.db
+
+# Virtualenv
 venv/
 .venv/
-juku.db
-*.db.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Alembic
+alembic/versions/__pycache__/

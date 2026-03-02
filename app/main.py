@@ -42,9 +42,11 @@ logger = logging.getLogger(__name__)
 # ── 静的ファイルの場所 ──────────────────────────────────────────────────────
 _HERE = Path(__file__).parent.parent  # プロジェクトルート（manage.py と同列）
 _STATIC_DIR = _HERE / "static"
-_DASHBOARD = _HERE / "dashboard.html"
-_QR_DISPLAY = _HERE / "qr_display.html"   # タブレット用QR表示ページ
-_CHECKIN = _HERE / "checkin.html"          # 学生チェックインページ
+# HTML ページ群は app/web/pages 配下に集約
+_PAGES_DIR = Path(__file__).parent / "web" / "pages"
+_DASHBOARD = _PAGES_DIR / "dashboard.html"
+_QR_DISPLAY = _PAGES_DIR / "qr_display.html"   # タブレット用QR表示ページ
+_CHECKIN = _PAGES_DIR / "checkin.html"          # 学生チェックインページ
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
