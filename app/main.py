@@ -162,12 +162,15 @@ def serve_checkin():
 
 # ── ルーター登録 ───────────────────────────────────────────────────────────
 from app.routers import auth, users, attendance as att_router, qr, ws, audit  # noqa: E402
+from app.routers import homework, exam  # noqa: E402
 
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(att_router.router)
 app.include_router(qr.router)
 app.include_router(ws.router)   # WS /ws/live
+app.include_router(homework.router)  # 宿題管理
+app.include_router(exam.router)      # 試験・成績管理
 app.include_router(audit.router)  # Phase 7 監査API
 
 
